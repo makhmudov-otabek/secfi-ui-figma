@@ -1,11 +1,11 @@
 type ButtonProps = {
   extraStyles?: string;
   bgColor?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export default function Button({
-  extraStyles,
+  extraStyles = "",
   bgColor = "bg-[#292A2D]",
   children = "Default text",
 }: ButtonProps) {
