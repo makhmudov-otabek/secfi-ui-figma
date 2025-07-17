@@ -9,6 +9,7 @@ import Benefits from "@/components/Benefits";
 import Bills from "@/components/Bills";
 import Comments from "@/components/Comments";
 import Options from "@/components/Options";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
       <Bills />
       <Comments />
       <Options />
+      <Footer />
     </section>
   );
 }
