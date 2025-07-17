@@ -57,9 +57,7 @@ export default function Footer() {
     },
   ];
   return (
-    <footer
-      className={`container mx-auto px-6 py-14 bg-[url(../../public/logo-big.svg)] bg-no-repeat bg-cover bg-bottom`}
-    >
+    <footer className={`container mx-auto px-6 py-14`}>
       <div className="grid grid-cols-4 justify-between text-[#292A2D]">
         {footerMenu.map((item) => {
           return (
@@ -79,7 +77,7 @@ export default function Footer() {
           );
         })}
       </div>
-      <div className="w-full h-[50vh]" />
+      <div className="w-full h-[50vh] bg-[url(../../public/logo-big.svg)] bg-no-repeat bg-contain bg-center" />
       <p className="footerList text-[#B5B6B3]">
         “Secfi” refers to Secfi, Inc. and its affiliates. Secfi, Inc. is a
         technology company offering a range of financial products and services

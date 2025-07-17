@@ -30,7 +30,7 @@ function Card({ text, img, bgColor }: CardProp) {
         y: 0,
         opacity: 1,
         stagger: 0.5,
-        delay: 1,
+        delay: 0.5,
       }
     );
   }, []);

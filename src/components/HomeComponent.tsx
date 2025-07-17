@@ -55,7 +55,7 @@ export default function HomeComponent() {
           <Image src={WomanSvg} alt="woman" width={350} height={400} />
         </div>
 
-        <div className="absolute top-1/6 left-0 w-fit bg-[#fffbeb] border-solid border border-gray-300 rounded-xl ">
+        <div className="absolute top-1/6 left-1/12 w-fit bg-[#fffbeb] border-solid border border-gray-300 rounded-xl ">
           <p className="py-4 px-3 mb-3 border-solid border border-transparent border-b-gray-300">
             Exercise details
           </p>
