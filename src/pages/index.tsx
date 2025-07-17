@@ -6,6 +6,7 @@ import Result1Img from "@/../public/result-1.svg";
 import Result2Img from "@/../public/result-2.svg";
 import Result3Img from "@/../public/result-3.svg";
 import Benefits from "@/components/Benefits";
+import Bills from "@/components/Bills";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
         extraStyles="bg-[#FBFBF6]"
       />
       <Benefits />
+      <Bills />
     </section>
   );
 }
