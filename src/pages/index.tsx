@@ -7,6 +7,7 @@ import Result2Img from "@/../public/result-2.svg";
 import Result3Img from "@/../public/result-3.svg";
 import Benefits from "@/components/Benefits";
 import Bills from "@/components/Bills";
+import Comments from "@/components/Comments";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
       />
       <Benefits />
       <Bills />
+      <Comments />
     </section>
   );
 }
