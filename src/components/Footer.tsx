@@ -1,5 +1,3 @@
-import LogoBg from "../../public/logo-big.svg";
-
 export default function Footer() {
   const footerMenu = [
     {
