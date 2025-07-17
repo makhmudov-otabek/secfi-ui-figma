@@ -6,7 +6,6 @@ import { useRef } from "react";
 
 export default function Header() {
   const buttonRef = useRef(null);
-  const listRef = useRef(null);
 
   return (
     <header className="container mx-auto p-6">

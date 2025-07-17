@@ -14,10 +14,10 @@ type CardProp = {
 function Card({ text, img, bgColor }: CardProp) {
   return (
     <div
-      className={`col-span-4 md:col-span-2 xl:col-span-1 flex flex-col relative gap-16 md:gap-24 p-6 px-10 pb-0 rounded-md ${bgColor}`}
+      className={`col-span-4 md:col-span-2 xl:col-span-1 flex flex-col relative gap-16 md:gap-24 p-6 px-10 pb-0 rounded-md hover:scale-105 duration-300 ${bgColor}`}
     >
       <p className="text-white text-2xl">{text}</p>
-      <div className="w-[200px] h-[250px]"></div>
+      <div className="h-[250px]"></div>
       <Image src={img} alt="man" className="absolute bottom-0 left-2/" />
     </div>
   );

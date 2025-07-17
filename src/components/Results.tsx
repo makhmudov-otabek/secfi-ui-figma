@@ -18,14 +18,12 @@ export default function Results({
 }: ResultProp) {
   return (
     <section
-      className={`container mx-auto p-6 flex flex-wrap justify-between mt-14 items-center h-screen ${extraStyles}`}
+      className={`container mx-auto p-6 flex flex-wrap gap-10 justify-between mt-14 py-20 items-center ${extraStyles}`}
     >
       <div className="flex-auto flex justify-center">
         <div>
           <span className="text-[13px] text-gray-500">{summary}</span>
-          <p className="text-3xl my-8 min-w-[300px] max-w-[450px] break-words">
-            {mainText}
-          </p>
+          <p className="text-3xl my-8 max-w-[450px] break-words">{mainText}</p>
           <div className="flex gap-4">
             <Button extraStyles="text-white">Get started</Button>
             <Button
@@ -38,7 +36,7 @@ export default function Results({
         </div>
       </div>
       <div className="flex-auto flex justify-center">
-        <Image src={image} alt="woman" />
+        <Image src={image} alt="woman" className="w-fit" />
       </div>
     </section>
   );

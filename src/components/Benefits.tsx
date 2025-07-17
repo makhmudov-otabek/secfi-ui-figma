@@ -3,11 +3,11 @@ import BenefitsImage from "@/../public/benefits-image.svg";
 
 export default function Benefits() {
   return (
-    <section className="container mx-auto p-6 grid grid-cols-2 h-screen items-center">
+    <section className="container mx-auto p-6 py-20 grid grid-cols-2 gap-10 items-center">
       <div className={`col-span-2 md:col-span-1 flex justify-center`}>
         <div>
           <span className="text-[13px] text-gray-500">Why Secfi</span>
-          <p className="text-5xl max-w-[500px] break-words tracking-wider">
+          <p className="text-5xl max-w-[400px]  break-words tracking-wider">
             Built by startup employees
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function Benefits() {
           options, to help you save time and money, and grow your wealth.
         </p>
       </div>
-      <div className="col-span-2 flex justify-center">
+      <div className="col-span-2 flex justify-center mt-20">
         <Image src={BenefitsImage} alt="Benefits" />
       </div>
     </section>

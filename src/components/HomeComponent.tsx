@@ -8,7 +8,7 @@ export default function HomeComponent() {
       <div className="col-span-2 md:col-span-1 my-8">
         <p className="text-5xl">Equity Financing</p>
         <p className="text-5xl">for startup employees</p>
-        <p className="mt-6 mb-8 min-w-[300px]  max-w-[600px] break-words">
+        <p className="mt-6 mb-8 max-w-[600px] break-words">
           Get equity planning, stock option financing, and wealth management
           from advisors that know how stock options and equity can help grow
           your wealth.
@@ -16,12 +16,12 @@ export default function HomeComponent() {
         <Button extraStyles="text-white">Get started</Button>
       </div>
 
-      <div className={`col-span-2 md:col-span-1 relative`}>
+      <div className={`col-span-2 md:col-span-1 relative hidden md:block`}>
         <div className="flex justify-center">
           <Image src={WomanSvg} alt="woman" width={350} height={400} />
         </div>
 
-        <div className="absolute bottom-0.5 right-0 md:left-0 md:top-1/4 w-fit bg-[#fffbeb] border-solid border border-gray-300 rounded-xl ">
+        <div className="absolute top-1/6 left-0 w-fit bg-[#fffbeb] border-solid border border-gray-300 rounded-xl ">
           <p className="py-4 px-3 mb-3 border-solid border border-transparent border-b-gray-300">
             Exercise details
           </p>

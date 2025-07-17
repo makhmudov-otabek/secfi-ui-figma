@@ -34,12 +34,12 @@ export default function Footer() {
   ];
   return (
     <footer
-      className={`container mx-auto px-6 py-14 h-screen bg-[url(../../public/logo-big.svg)] bg-no-repeat bg-cover bg-bottom`}
+      className={`container mx-auto px-6 py-14 bg-[url(../../public/logo-big.svg)] bg-no-repeat bg-cover bg-bottom`}
     >
-      <div className="flex justify-between text-[#292A2D]">
+      <div className="grid grid-cols-4 justify-between text-[#292A2D]">
         {footerMenu.map((item) => {
           return (
-            <ul key={item.name}>
+            <ul key={item.name} className="col-span-2 md:col-span-1">
               <li className="text-[#004250] mb-4">{item.name.toUpperCase()}</li>
               {item.values.map((menuItem) => {
                 return (
@@ -65,7 +65,7 @@ export default function Footer() {
       <p className="text-[#B5B6B3]">
         Check the background of Secfi Securities on FINRA’s BrokerCheck
       </p>
-      <p className="text-[#B5B6B3]">
+      <p className="text-[#B5B6B3] break-words">
         Securities products offered by Secfi Securities, LLC, an SEC-registered
         broker-dealer and Member FINRA / SIPC ((https://www.finra.org/#/ and
         https://www.sipc.org/)). Access important information in our Legal
