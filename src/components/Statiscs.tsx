@@ -2,7 +2,7 @@ import Button from "./Button";
 
 export default function Statistics() {
   return (
-    <section className="w-full flex flex-col items-center mt-14 m-auto">
+    <section className="container mx-auto p-6 w-full flex flex-col items-center mt-14 m-auto">
       <div className="w-fit pl-10 pr-2 py-2 text-[#004250] border-solid border border-[#292A2D26] rounded-[42px]">
         <p className="my-4 min-w-[300px]  max-w-[500px] break-words">
           This website stores data such as cookies to enable essential site

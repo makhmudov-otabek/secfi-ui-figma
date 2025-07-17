@@ -4,7 +4,7 @@ import WomanSvg from "../../public/woman.svg";
 
 export default function HomeComponent() {
   return (
-    <section className="grid grid-cols-2 items-center min-h-96  border-solid border-b-2 border-[#5B666F40]">
+    <section className="container mx-auto p-6 grid grid-cols-2 items-center min-h-96  border-solid border-b-2 border-[#5B666F40]">
       <div className="col-span-2 md:col-span-1 my-8">
         <p className="text-5xl">Equity Financing</p>
         <p className="text-5xl">for startup employees</p>

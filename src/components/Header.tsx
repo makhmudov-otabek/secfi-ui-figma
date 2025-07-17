@@ -4,7 +4,7 @@ import Button from "./Button";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center">
+    <header className="container mx-auto p-6 flex justify-between items-center">
       <div className="flex items-center gap-40">
         <Image src={Logo} alt="logo" height={30} width={80} />
         <ul className="list-none flex gap-10">
