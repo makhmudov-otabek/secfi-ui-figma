@@ -3,12 +3,29 @@ import Logo from "@/../public/logo.svg";
 import Button from "./Button";
 import { IoMdMenu } from "react-icons/io";
 import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Header() {
   const buttonRef = useRef(null);
 
+  useGSAP(() => {
+    gsap.fromTo(
+      "#header",
+      {
+        y: -20,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        delay: 0.5,
+      }
+    );
+  }, []);
+
   return (
-    <header className="container mx-auto p-6">
+    <header id="header" className="container mx-auto p-6">
       <div className="hidden md:block">
         <div className="w-full flex justify-between items-center">
           <div className="flex items-center gap-40">

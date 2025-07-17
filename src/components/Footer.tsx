@@ -1,4 +1,28 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Footer() {
+  useGSAP(() => {
+    gsap.fromTo(
+      ".footerList",
+      {
+        scrollTrigger: ".footerList",
+        y: -20,
+        opacity: 0,
+      },
+      {
+        scrollTrigger: ".footerList",
+        y: 0,
+        opacity: 1,
+        stagger: 0.5,
+        delay: 0.5,
+      }
+    );
+  }, []);
+
   const footerMenu = [
     {
       name: "Solutions",
@@ -39,7 +63,7 @@ export default function Footer() {
       <div className="grid grid-cols-4 justify-between text-[#292A2D]">
         {footerMenu.map((item) => {
           return (
-            <ul key={item.name} className="col-span-2 md:col-span-1">
+            <ul key={item.name} className="footerList col-span-2 md:col-span-1">
               <li className="text-[#004250] mb-4">{item.name.toUpperCase()}</li>
               {item.values.map((menuItem) => {
                 return (
@@ -56,16 +80,16 @@ export default function Footer() {
         })}
       </div>
       <div className="w-full h-[50vh]" />
-      <p className="text-[#B5B6B3]">
+      <p className="footerList text-[#B5B6B3]">
         “Secfi” refers to Secfi, Inc. and its affiliates. Secfi, Inc. is a
         technology company offering a range of financial products and services
         through its wholly-owned, separately managed but affiliated
         subsidiaries, Secfi Securities, LLC and Secfi Advisory Limited.
       </p>
-      <p className="text-[#B5B6B3]">
+      <p className="footerList text-[#B5B6B3]">
         Check the background of Secfi Securities on FINRA’s BrokerCheck
       </p>
-      <p className="text-[#B5B6B3] break-words">
+      <p className="footerList text-[#B5B6B3] break-words">
         Securities products offered by Secfi Securities, LLC, an SEC-registered
         broker-dealer and Member FINRA / SIPC ((https://www.finra.org/#/ and
         https://www.sipc.org/)). Access important information in our Legal

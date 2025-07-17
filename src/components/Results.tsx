@@ -2,6 +2,10 @@ import Image from "next/image";
 import Button from "./Button";
 import Result1Img from "@/../public/result-1.svg";
 import type { StaticImageData } from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 type ResultProp = {
   summary: string;
@@ -16,11 +20,44 @@ export default function Results({
   image = Result1Img,
   extraStyles = "",
 }: ResultProp) {
+  useGSAP(() => {
+    gsap.fromTo(
+      ".resultsLeft",
+      {
+        scrollTrigger: ".resultsLeft",
+        x: -20,
+        opacity: 0,
+      },
+      {
+        scrollTrigger: ".resultsLeft",
+        x: 0,
+        opacity: 1,
+        stagger: 0.5,
+        delay: 0.5,
+      }
+    );
+    gsap.fromTo(
+      ".resultsRight",
+      {
+        scrollTrigger: ".resultsRight",
+        x: 20,
+        opacity: 0,
+      },
+      {
+        scrollTrigger: ".resultsRight",
+        x: 0,
+        opacity: 1,
+        stagger: 0.5,
+        delay: 0.5,
+      }
+    );
+  }, []);
+
   return (
     <section
       className={`container mx-auto p-6 flex flex-wrap gap-10 justify-between mt-14 py-20 items-center ${extraStyles}`}
     >
-      <div className="flex-auto flex justify-center">
+      <div className="resultsLeft flex-auto flex justify-center">
         <div>
           <span className="text-[13px] text-gray-500">{summary}</span>
           <p className="text-3xl my-8 max-w-[450px] break-words">{mainText}</p>
@@ -35,7 +72,7 @@ export default function Results({
           </div>
         </div>
       </div>
-      <div className="flex-auto flex justify-center">
+      <div className="resultsRight flex-auto flex justify-center">
         <Image src={image} alt="woman" className="w-fit" />
       </div>
     </section>

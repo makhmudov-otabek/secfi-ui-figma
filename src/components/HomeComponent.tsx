@@ -1,11 +1,42 @@
 import Image from "next/image";
 import Button from "./Button";
 import WomanSvg from "../../public/woman.svg";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function HomeComponent() {
+  useGSAP(() => {
+    gsap.fromTo(
+      "#homeLeft",
+      {
+        x: -20,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.1,
+        delay: 0.5,
+      }
+    );
+    gsap.fromTo(
+      "#homeRight",
+      {
+        x: 20,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.1,
+        delay: 0.5,
+      }
+    );
+  }, []);
+
   return (
     <section className="container mx-auto p-6 pb-0 grid grid-cols-2 gap-8 items-center min-h-96  border-solid border-b-2 border-[#5B666F40]">
-      <div className="col-span-2 md:col-span-1 my-8">
+      <div id="homeLeft" className="col-span-2 md:col-span-1 my-8">
         <p className="text-5xl">Equity Financing</p>
         <p className="text-5xl">for startup employees</p>
         <p className="mt-6 mb-8 max-w-[600px] break-words">
@@ -16,7 +47,10 @@ export default function HomeComponent() {
         <Button extraStyles="text-white">Get started</Button>
       </div>
 
-      <div className={`col-span-2 md:col-span-1 relative hidden md:block`}>
+      <div
+        id="homeRight"
+        className={`col-span-2 md:col-span-1 relative hidden md:block`}
+      >
         <div className="flex justify-center">
           <Image src={WomanSvg} alt="woman" width={350} height={400} />
         </div>

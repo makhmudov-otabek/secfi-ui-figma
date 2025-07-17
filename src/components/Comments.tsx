@@ -1,3 +1,9 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
 type CardProp = {
   mainText: string;
   name: string;
@@ -19,13 +25,31 @@ function Card({ mainText, name, level }: CardProp) {
 }
 
 export default function Comments() {
+  useGSAP(() => {
+    gsap.fromTo(
+      ".comments",
+      {
+        scrollTrigger: ".comments",
+        y: 20,
+        opacity: 0,
+      },
+      {
+        scrollTrigger: ".comments",
+        x: 0,
+        opacity: 1,
+        stagger: 0.5,
+        delay: 1,
+      }
+    );
+  }, []);
+
   return (
     <section className="container mx-auto flex flex-col justify-center gap-18 px-6 py-20 text-white bg-[#313236]">
-      <div className="w-full text-center">
+      <div className="comments w-full text-center">
         <span>Testimonials</span>
         <p className="text-4xl">What our clients say</p>
       </div>
-      <div className="flex flex-wrap justify-between gap-4 mt-8">
+      <div className="comments flex flex-wrap justify-between gap-4 mt-8">
         <Card
           mainText="I realized I’ve been sorely needing your advisory services. So excited to work with you.I realized I’ve been sorely needing your advisory services. So excited to work with you."
           name="Senior Engineer"

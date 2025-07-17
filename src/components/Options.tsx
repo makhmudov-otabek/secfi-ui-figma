@@ -4,6 +4,11 @@ import Options1Img from "@/../public/options-1.svg";
 import Options2Img from "@/../public/options-2.svg";
 import Options3Img from "@/../public/options-3.svg";
 import Options4Img from "@/../public/options-4.svg";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type CardProp = {
   text: string;
@@ -12,9 +17,27 @@ type CardProp = {
 };
 
 function Card({ text, img, bgColor }: CardProp) {
+  useGSAP(() => {
+    gsap.fromTo(
+      ".card",
+      {
+        scrollTrigger: ".card",
+        y: 20,
+        opacity: 0,
+      },
+      {
+        scrollTrigger: ".card",
+        y: 0,
+        opacity: 1,
+        stagger: 0.5,
+        delay: 1,
+      }
+    );
+  }, []);
+
   return (
     <div
-      className={`col-span-4 md:col-span-2 xl:col-span-1 flex flex-col relative gap-16 md:gap-24 p-6 px-10 pb-0 rounded-md hover:scale-105 duration-300 ${bgColor}`}
+      className={`card col-span-4 md:col-span-2 cursor-pointer xl:col-span-1 flex flex-col relative gap-16 md:gap-24 p-6 px-10 pb-0 rounded-md hover:scale-105 duration-300 ${bgColor}`}
     >
       <p className="text-white text-2xl">{text}</p>
       <div className="h-[250px]"></div>
