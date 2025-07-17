@@ -8,6 +8,7 @@ import Result3Img from "@/../public/result-3.svg";
 import Benefits from "@/components/Benefits";
 import Bills from "@/components/Bills";
 import Comments from "@/components/Comments";
+import Options from "@/components/Options";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
       <Benefits />
       <Bills />
       <Comments />
+      <Options />
     </section>
   );
 }

@@ -6,7 +6,7 @@ type CardProp = {
 
 function Card({ mainText, name, level }: CardProp) {
   return (
-    <div className="w-[300px] md:w-[30%] border border-[#FFFFFF33] rounded-md h-[300px] p-4 flex flex-col justify-between">
+    <div className="w-[300px] md:w-[30%] border border-[#FFFFFF33] rounded-md  p-4 flex flex-col gap-16 md:gap-24 justify-between">
       <p className="text-[18px]">
         {'"'} {mainText} {'"'}
       </p>
@@ -20,7 +20,7 @@ function Card({ mainText, name, level }: CardProp) {
 
 export default function Comments() {
   return (
-    <section className="container mx-auto flex flex-col justify-center gap-24 px-6 py-14 border-solid border-b-2 text-white bg-[#313236]">
+    <section className="container mx-auto flex flex-col justify-center gap-24 px-6 py-14 text-white bg-[#313236]">
       <div className="w-full text-center">
         <span>Testimonials</span>
         <p className="text-4xl">What our clients say</p>
